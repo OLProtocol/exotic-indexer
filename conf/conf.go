@@ -35,22 +35,8 @@ func NewConf() *Conf {
 		log.Fatalln("Error converting BITCOIN_RPC_PORT to int")
 	}
 
-	// bitcoindDir := getEnvOrPanic("BITCOIND_DIR")
-	// cookieFilePath := filepath.Join(bitcoindDir, ".cookie")
-	// data, err := os.ReadFile(cookieFilePath)
-	// if err != nil {
-	// 	log.Fatalln("Error reading .cookie file:", err)
-	// }
-
-	// Convert data to a string and split it to get username and password
-	// contents := string(data)
-	// parts := strings.SplitN(contents, ":", 2)
-	// if len(parts) != 2 {
-	// 	log.Fatalln("Error parsing .cookie file")
-	// }
-
-	username := getEnvOrPanic("BITCOIN_USER")     // parts[0]
-	password := getEnvOrPanic("BITCOIN_PASSWORD") //strings.TrimSpace(parts[1])
+	username := getEnvOrPanic("BITCOIN_USER")
+	password := getEnvOrPanic("BITCOIN_PASSWORD")
 
 	ll := os.Getenv("LOG_LEVEL")
 	logLevel, err := log.ParseLevel(ll)
